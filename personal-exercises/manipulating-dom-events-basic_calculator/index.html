@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Basic calculator</title>
+</head>
+<body>
+
+    <header> Basic calculator</header>
+
+    <main>
+        <section class="screen-result-section">
+            <input type="text" readonly id="screen-result" placeholder="1">
+        </section>
+        
+        <section class="operations-section">
+            <div class="input-area">
+                <form class="user-inputs">
+                    <input type="number" name="value1" id="value1">
+                    <input type="number" name="value1" id="value2">
+                    <input type="reset" value="Clear">
+                </form>
+            </div>
+            
+            <div class="operators-area">
+                <input type="button" value="+" onclick="toSum()">
+                <input type="button" value="-" onclick="toSubtract()">
+                <input type="button" value="*" onclick="toMultiplicate()">
+                <input type="button" value="/" onclick="toDivide()">
+            </div>
+        </section>
+    </main>
+    
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
