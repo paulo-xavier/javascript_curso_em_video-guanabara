@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        const salary = Number(window.prompt("Enter your salary: "));
+        
+        let newSalary = (salary + (0.10 * salary)).toLocaleString('pt-br', {style:'currency', currency: 'USD'}); 
+
+        // newSalary.toLocaleString('pt-br', {
+        //     style: 'currency', 
+        //     currency: 'BRL'
+        // }); 
+
+        // document.write(`Your final salary is: ${newSalary.toLocaleString('pt-br', {style:'currency', currency:'BRL'})}`); 
+        document.write(`Your final salary is: ${newSalary}`)
+
+
+    </script>
+</body>
+</html>

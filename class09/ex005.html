@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First steps using DOM</title>
+    
+    <style>
+        body {
+            background-color: #5D8A66;
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Starting to study DOM</h1>
+    
+    <p>The result goes here</p>
+    <p>Learning to use <strong>DOM</strong> in Javascript</p>
+    
+    <div id="msg"> Click on me!</div>
+
+
+    <script>
+        // window.document.write(window.document.charset);
+        // window.document.write(window.navigator.appName);
+        // window.document.write(window.document.URL); 
+
+        var body = window.document.body; 
+        var p1 = window.document.getElementsByTagName('p')[1] // [0] select the first paragraph
+
+        // window.document.write("This text is written in that tag: " + p1.innerText); 
+        // p1.style.color = 'blue'; 
+        // body.style.backgroundColor = "#1A6566";
+
+
+        document.write(p1.innerHTML); //keeps the original formatting with the children / keeps other tags inside that
+        document.write(p1.innerText); //Takes the text without the children / without formatting 
+
+
+        /*
+        var d = window.document.getElementById('msg'); 
+        d.style.background = "green"; 
+        d.innerText = "I am waiting"; 
+        // window.document.getElementById('msg').innerText = "Hello"
+        */
+
+        /*
+        var d = window.document.getElementsByName('msg')[0];
+        d.innerText = "Hello";
+        */
+
+        var d = window.document.querySelector('div#msg'); // For IDs
+        var d2 = window.document.querySelector('div.msg'); // For classes
+        
+        d.style.color = "blue"
+
+    
+
+    </script>
+</body>
+</html>
