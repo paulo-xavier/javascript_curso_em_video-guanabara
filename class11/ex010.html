@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Fine System</h1>
+    Car's speed<input type="number" name="speed" id="txtspeed">km/h 
+    <input type="button" value="Check" onclick="calculate()">
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+            var txtSpeed = window.document.querySelector('input#txtspeed'); 
+            var result = window.document.querySelector('div#result'); 
+            var speed = Number(txtSpeed.value); 
+
+            result.innerHTML = `
+                <p> Your current speed is <strong>${speed}km/h</strong></p>
+            `
+            if (speed > 60) {
+                result.innerHTML += `
+                    <p> Your are <mark>FINED</mark> because you exceeded the speed limit! </p>
+                `
+            }
+
+            result.innerHTML += `
+                <p> Always drive using a seatbelt! </p>
+            `
+        }
+    </script>
+</body>
+</html>

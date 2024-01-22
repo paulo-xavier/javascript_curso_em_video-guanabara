@@ -8,7 +8,6 @@ function toSum() {
 
     const result = value1 + value2;
 
-
     screenResult.placeholder = result;
 }
 

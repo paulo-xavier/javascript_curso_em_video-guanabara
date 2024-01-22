@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country verification</title>
+    
+    <style>
+        *{
+            padding: 0; 
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-image: url('./background.jpg');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .page_container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px black;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        header {
+            margin: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            margin-bottom: 20px;    
+        }
+
+        input {
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        input[type=text] {
+            text-indent: 5px;
+        }
+
+        input:not(input[type=text]){
+            color: white;
+            width: 60px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        input[type=button] {
+            background-color: rgb(35, 185, 35);
+        }
+        input[type=reset] {
+            background-color: rgb(200, 176, 37);
+        }
+        
+        #message {
+            color: green;
+            /* color: rgb(128, 64, 0); */
+            margin: 10px;
+            font-size: 20px;
+            text-shadow: 1px 1px 1px rgba(130, 130, 16, 0.592);
+            
+        }
+
+        figure {
+            display: flex;
+            justify-content: center;
+            margin: 15px;
+        }
+
+
+        img {
+            width: 50%;
+        }
+
+        @media(max-width: 620px) {
+            .page_container {
+                width: 60%;
+            }
+            form {
+                display: grid;
+                grid-template-rows: 2;
+                grid-template-columns: 1;
+                row-gap: 10px;
+                column-gap: 30%;
+            }
+
+            input[type=text]{
+                grid-row: 1/2;
+                grid-column: 1/ span 2; /*Element starts on column 1 and ends on column 2*/
+                
+            }
+           
+            input[type=button] {
+                grid-row: 2/2;
+                grid-column: 1/2;
+            }
+
+            input[type=reset] {
+                grid-row: 2/2;
+                grid-column: 2/2;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .page_container{
+                width: 70%;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="page_container">
+        <header>
+            <h1>Country verification</h1>
+        </header>
+        <main>
+            <form>
+                <input type="text" placeholder="country" name="country" id="country">
+                <input type="button" value="Verify" onclick="printCountry()">
+                <input type="reset" value="Clear">
+            </form>
+            <p id="message">
+                Enter a country!
+            </p>
+
+            <figure>
+                
+            </figure>
+        </main>
+    </div>
+
+    <script>
+        function printCountry() {
+            const country = (document.getElementById('country').value).toLowerCase(); 
+            const message = document.getElementById('message');
+            const figure = document.getElementsByTagName('figure')[0]
+
+            if(country == 'brazil') {
+                message.style.color = 'green';  
+                message.innerText = 'You are Brazilian 😁';
+                figure.innerHTML = `
+                    <img src="./brazil.png" alt="Brazil flag">
+                `
+            } else {
+                message.style.color = 'rgb(128, 64, 0)';
+                message.innerText = 'You are Foreigner 😎';
+                figure.innerHTML = `
+                    <img src="foreign.png" alt="Globe image">
+                `
+            }
+        }
+    </script>
+</body>
+</html>
